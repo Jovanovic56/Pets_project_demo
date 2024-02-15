@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <p>Species: {{ species }}</p>
+    <p>Age: {{ age_input }}</p>
+    {% if pets %}
+        <ul>
+            {% for pet in pets %}
+                <li>{{ pet.name }} - {{ pet.species }} - {% if pet.age < 0 %}Unknown{% elif pet.age == 0 %}Baby{% else %}{{ pet.age }} years old{% endif %}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No pets found matching the criteria.</p>
+    {% endif %}
+    <a href="{% url 'search_pet' %}">Back to search</a>
+</body>
+</html>

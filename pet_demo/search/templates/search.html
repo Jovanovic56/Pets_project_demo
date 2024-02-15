@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Pets</title>
+</head>
+<body>
+    <h1>Search Pets</h1>
+    <form method="get" action="{% url 'search_pet' %}">
+        Species: <input type="text" name="species"><br>
+        Age: <input type="number" name="age"><br>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
